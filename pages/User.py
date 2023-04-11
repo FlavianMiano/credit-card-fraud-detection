@@ -8,6 +8,9 @@ import plotly.express as px
 import uuid
 import time
 import datetime
+import tempfile
+import zipfile
+import os
 
 import timeit
 import warnings
@@ -19,7 +22,17 @@ from sklearn.preprocessing import OrdinalEncoder
 from pages.Visualizations import df
 import pickle
 
-model = pickle.load(open('finalized_model.pkl', 'rb'))
+# zipfile.ZipFile(f) as zip_file:
+#                 zip_file.extractall(tmp_dir)
+#                 with open(os.path.join(tmp_dir, 'my_model.pkl'), 'rb') as pkl_file:
+
+with zipfile.ZipFile('./final_model.zip') as zip_ref:
+    zip_ref.extractall('final_model')
+    with open(os.path.join('final_model', 'finalized_model.pkl'), 'rb') as pkl_file:
+        model = pickle.load(pkl_file)
+
+#model = pickle.load('final_model/finalized_model.pkl')
+#model = pickle.load(open('./finalized_model.zip/finalized_model.pkl', 'rb'))
 
 
 

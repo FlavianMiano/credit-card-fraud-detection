@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import pydeck as pdk
 import datetime as dt
 import seaborn as sns
+import zipfile
 
 import timeit
 import warnings
@@ -14,7 +15,17 @@ import streamlit as st
 #st.title('Credit Card Fraud Detection')
 
 # Load the dataset from the csv file using pandas
-df=st.cache_data(pd.read_csv)('fraudTrain.csv')
+
+import requests
+
+
+# with zipfile.ZipFile('./data.zip', 'r') as zip_ref:
+#     zip_ref.extractall('data')
+
+# Read extracted files using pandas
+#df = pd.read_csv('data/fraudTrain.csv')
+
+df=st.cache_data(pd.read_csv)('./fraudTrain.csv')
 df = df.sample(frac=0.1, random_state = 48)
 
 main_tab1, main_tab2, main_tab3 = st.tabs(["Show what the dataframe looks like", 
