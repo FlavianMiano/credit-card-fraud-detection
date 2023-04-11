@@ -23,60 +23,60 @@ from pandas_datareader import data
 from forex_python.converter import CurrencyRates
 
 
-st.subheader("Today' converting rates")
-st.write(' ')
+# st.subheader("Today' converting rates")
+# st.write(' ')
 
-c = CurrencyRates()
-list_usd = c.get_rates('USD')
-list_euro = c.get_rates("EUR")
-list_inr = c.get_rates('INR')
-list = ["BITCOIN", 'USD', 'EUR', 'INR']
+# c = CurrencyRates()
+# list_usd = c.get_rates('USD')
+# list_euro = c.get_rates("EUR")
+# list_inr = c.get_rates('INR')
+# list = ["BITCOIN", 'USD', 'EUR', 'INR']
 
-option = st.selectbox(
-    'Choose the Currency',
-    list
-)
+# option = st.selectbox(
+#     'Choose the Currency',
+#     list
+# )
 
-if option is 'USD':
-    st.write(pd.DataFrame(list_usd, index=[1]))
+# if option is 'USD':
+#     st.write(pd.DataFrame(list_usd, index=[1]))
     
-    st.line_chart(list_usd)
+#     st.line_chart(list_usd)
 
-    st.write('Trend:')
+#     st.write('Trend:')
 
-    trend = data.DataReader('DEXUSEU', 'fred')
-    st.line_chart(trend)
+#     trend = data.DataReader('DEXUSEU', 'fred')
+#     st.line_chart(trend)
 
-elif option is 'EUR':
-    st.write(pd.DataFrame(list_euro, index=[1]))
-    st.line_chart(list_euro)
+# elif option is 'EUR':
+#     st.write(pd.DataFrame(list_euro, index=[1]))
+#     st.line_chart(list_euro)
 
-    st.write('Trend:')
+#     st.write('Trend:')
 
-    trend = data.DataReader('DEXUSEU', 'fred')
-    st.line_chart(trend)
+#     trend = data.DataReader('DEXUSEU', 'fred')
+#     st.line_chart(trend)
 
-elif option is 'INR':
-    st.write(pd.DataFrame(list_inr, index=[1]))
-    st.line_chart(list_inr)
+# elif option is 'INR':
+#     st.write(pd.DataFrame(list_inr, index=[1]))
+#     st.line_chart(list_inr)
 
-    st.write('Trend:')
+#     st.write('Trend:')
 
-    trend = data.DataReader('DEXINUS', 'fred')
-    st.line_chart(trend)
+#     trend = data.DataReader('DEXINUS', 'fred')
+#     st.line_chart(trend)
 
-elif option is 'BITCOIN':
-    from forex_python.bitcoin import BtcConverter
+# elif option is 'BITCOIN':
+#     from forex_python.bitcoin import BtcConverter
 
-    b = BtcConverter()
+#     b = BtcConverter()
 
-    st.write('Trend:')
+#     st.write('Trend:')
 
-    trend = data.DataReader('CBBCHUSD', 'fred')
+#     trend = data.DataReader('CBBCHUSD', 'fred')
 
-    st.line_chart(trend)
+#     st.line_chart(trend)
 
-    st.write('Current price of Bitcoin is $', b.get_latest_price('USD'))
+#     st.write('Current price of Bitcoin is $', b.get_latest_price('USD'))
 
 
 st.subheader('Stocks Today :zap:')
