@@ -11,6 +11,7 @@ import datetime
 import tempfile
 import zipfile
 import os
+import requests
 
 import timeit
 import warnings
@@ -22,7 +23,11 @@ from sklearn.preprocessing import OrdinalEncoder
 from pages.Visualizations import df
 import pickle
 
-model = pickle.load(open('./finalized_model.pkl', 'rb'))
+#model = pickle.load(open('./finalized_model.pkl', 'rb'))
+
+model_url = 'https://www.dropbox.com/s/8thofbpa5m6xfjl/finalized_model.pkl?dl=1'
+response = requests.get(model_url)
+model = pickle.loads(response.content)
 
 
 
