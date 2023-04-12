@@ -6,6 +6,7 @@ import pydeck as pdk
 import datetime as dt
 import seaborn as sns
 import zipfile
+import dropbox
 
 import timeit
 import warnings
@@ -15,8 +16,20 @@ import streamlit as st
 #st.title('Credit Card Fraud Detection')
 
 # Load the dataset from the csv file using pandas
-df=st.cache_data(pd.read_csv('./fraudTrain.csv'))
-df = df.sample(frac=0.1, random_state = 48)
+
+# dbx = dropbox.Dropbox('sl.BcV124sZ3ZDaT0jEy9nC9eh13w7BmxlC4HosooXGOlOgXA-4KOZPf8sOiqxGtMtF1DM5w7iTlcuqs6valuIrfWPgQytMB1MvozhANgNlTYnDmu-TVaGOYZhaUoWsG11OYeU6itM')
+
+# res = dbx.files_download('https://www.dropbox.com/s/rzzuq3htmkw6011/fraudTrain.csv?dl=1')
+# data = pd.read_csv(res.raw)
+# st.write(data)
+#https://www.dropbox.com/s/rzzuq3htmkw6011/fraudTrain.csv?dl=0
+
+url = 'https://www.dropbox.com/s/rzzuq3htmkw6011/fraudTrain.csv?dl=1'
+df = pd.read_csv(url, error_bad_lines=False)
+
+
+# df=st.cache_data(read_csv(url))
+# df = df.sample(frac=0.1, random_state = 48)
 
 main_tab1, main_tab2, main_tab3 = st.tabs(["Show what the dataframe looks like", 
                                            "Show fraud and valid transaction details", 
