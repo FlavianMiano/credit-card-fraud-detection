@@ -93,19 +93,6 @@ from pages import User, Visualizations
 
 #     st.write('Current price of Bitcoin is $', b.get_latest_price('USD')
 
-st.title('Currency Exchange Rate')
-
-# Get currency exchange rate
-# Get currency exchange rate
-usd_eur = yf.Ticker('USDEUR=X')
-exchange_rate = usd_eur.info['regularMarketPrice']
-
-# Display exchange rate in streamlit app
-st.write(f'USD to EUR exchange rate: {exchange_rate}')
-# Display exchange rate graph in streamlit app
-
-st.line_chart(exchange_rate)
-
 
 st.subheader('Stocks Today :zap:')
 # import requests
