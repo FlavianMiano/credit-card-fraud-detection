@@ -25,7 +25,7 @@ import pickle
 
 #model = pickle.load(open('./finalized_model.pkl', 'rb'))
 
-model_url = 'https://www.dropbox.com/s/8thofbpa5m6xfjl/finalized_model.pkl?dl=1'
+model_url = 'https://www.dropbox.com/s/t7qjqkv4wy9lotb/finalized_model.pkl?dl=1'
 response = requests.get(model_url)
 model = pickle.loads(response.content)
 
