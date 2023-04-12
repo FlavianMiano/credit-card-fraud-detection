@@ -19,7 +19,7 @@ from sklearn.preprocessing import OrdinalEncoder
 from pages.Visualizations import df
 import pickle
 
-model = pickle.load(open('finalized_model.pkl', 'rb'))
+model = pickle.load(open('./finalized_model.pkl', 'rb'))
 
 
 
