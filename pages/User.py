@@ -36,9 +36,9 @@ maintab1, maintab2 = st.tabs(['Transact', 'Account'])
 with maintab1:
 
 
-    acc_num = st.number_input(
+    acc_num = st.selectbox(
         'Enter you Account number',
-        key="placeholder",
+        df.cc_num.unique(),
         )
         
     # acc_num = acc_num.astype(int)
