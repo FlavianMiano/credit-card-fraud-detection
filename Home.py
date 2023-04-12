@@ -96,16 +96,15 @@ from pages import User, Visualizations
 st.title('Currency Exchange Rate')
 
 # Get currency exchange rate
-usd_kes = yf.Ticker('USDEUR=X')
+# Get currency exchange rate
+usd_eur = yf.Ticker('USDEUR=X')
+exchange_rate = usd_eur.info['regularMarketPrice']
 
-exchange_rate_display = usd_kes.info['regularMarketPrice']
-
-exchange_rate = usd_kes.history(period='1y')
-
+# Display exchange rate in streamlit app
+st.write(f'USD to EUR exchange rate: {exchange_rate}')
 # Display exchange rate graph in streamlit app
-st.write(exchange_rate_display)
 
-st.line_chart(exchange_rate['Close'])
+st.line_chart(exchange_rate)
 
 
 st.subheader('Stocks Today :zap:')
