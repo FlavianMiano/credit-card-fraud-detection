@@ -25,6 +25,7 @@ import streamlit as st
 
 url = 'https://www.dropbox.com/s/rzzuq3htmkw6011/fraudTrain.csv?dl=1'
 df = pd.read_csv(url, error_bad_lines=False)
+#
 
 
 # df=st.cache_data(read_csv(url))
