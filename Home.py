@@ -96,10 +96,11 @@ from pages import User, Visualizations
 st.title('Currency Exchange Rate')
 
 # Get currency exchange rate
-usd_kes = yf.Ticker('USD/KES')
+usd_kes = yf.Ticker('USDEUR=X')
 exchange_rate = usd_kes.history(period='1y')
 
 # Display exchange rate graph in streamlit app
+
 st.line_chart(exchange_rate['Close'])
 
 
