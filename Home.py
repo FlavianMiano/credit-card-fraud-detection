@@ -173,8 +173,10 @@ st.subheader('Stocks Today :zap:')
 # expander.write(
 #     data
 # )
+url = 'https://www.dropbox.com/s/g25jiqpw539q2au/SP500.csv?dl=1'
 
-snp500 = pd.read_csv("SP500.csv")
+snp500 = pd.read_csv(url, error_bad_lines=False)
+
 symbols = snp500['Symbol'].sort_values().tolist()
 
 # st.set_page_config(
