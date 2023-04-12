@@ -8,6 +8,9 @@ import plotly.express as px
 import uuid
 import time
 import datetime
+import tempfile
+import zipfile
+import os
 
 import timeit
 import warnings
