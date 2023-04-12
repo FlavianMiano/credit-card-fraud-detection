@@ -26,16 +26,16 @@ from forex_python.converter import CurrencyRates
 from pages import User, Visualizations
 
 # Create a dictionary of pages
-pages = {
-    "Page 1": User,
-    "Page 2": Visualizations,}
+# pages = {
+#     "Page 1": User,
+#     "Page 2": Visualizations,}
 
 # Create a multiselect widget for selecting pages
-page = st.sidebar.multiselect("Select a page", list(pages.keys()))
+# page = st.sidebar.multiselect("Select a page", list(pages.keys()))
 
 # Display the selected page with the appropriate function
-for p in page:
-    pages[p]()
+# for p in page:
+#     pages[p]()
 
 
 # st.subheader("Today' converting rates")
