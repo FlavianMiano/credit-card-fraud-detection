@@ -91,7 +91,16 @@ from pages import User, Visualizations
 
 #     st.line_chart(trend)
 
-#     st.write('Current price of Bitcoin is $', b.get_latest_price('USD'))
+#     st.write('Current price of Bitcoin is $', b.get_latest_price('USD')
+
+st.title('Currency Exchange Rate')
+
+# Get currency exchange rate
+usd_kes = yf.Ticker('USD/KES')
+exchange_rate = usd_kes.history(period='1y')
+
+# Display exchange rate graph in streamlit app
+st.line_chart(exchange_rate['Close'])
 
 
 st.subheader('Stocks Today :zap:')
