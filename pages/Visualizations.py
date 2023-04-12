@@ -15,7 +15,7 @@ import streamlit as st
 #st.title('Credit Card Fraud Detection')
 
 # Load the dataset from the csv file using pandas
-df=st.cache_data(pd.read_csv)('./fraudTrain.csv')
+df=st.cache_data(pd.read_csv('./fraudTrain.csv'))
 df = df.sample(frac=0.1, random_state = 48)
 
 main_tab1, main_tab2, main_tab3 = st.tabs(["Show what the dataframe looks like", 
